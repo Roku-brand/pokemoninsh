@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MonQuest - ポケモン風デモ</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="hud">
+        <h1>MonQuest</h1>
+        <p id="objective">草むらを歩いてモンスターを探そう。</p>
+        <div class="team-panel">
+          <h2>手持ち</h2>
+          <ul id="partyList"></ul>
+        </div>
+      </section>
+
+      <section class="canvas-wrap">
+        <canvas id="world" width="640" height="448"></canvas>
+        <div id="battleOverlay" class="overlay hidden">
+          <div class="battle-window enemy-window">
+            <h3 id="enemyName">Wild ???</h3>
+            <p>HP: <span id="enemyHp"></span></p>
+            <div class="hp-bar"><div id="enemyHpBar"></div></div>
+          </div>
+
+          <div class="battle-scene">
+            <div class="enemy-sprite" id="enemySprite"></div>
+            <div class="player-sprite" id="playerSprite"></div>
+          </div>
+
+          <div class="battle-window player-window">
+            <h3 id="allyName">???</h3>
+            <p>HP: <span id="allyHp"></span></p>
+            <div class="hp-bar"><div id="allyHpBar"></div></div>
+          </div>
+
+          <div class="battle-controls">
+            <p id="battleLog">野生のモンスターが現れた！</p>
+            <div class="buttons">
+              <button data-action="move1" id="move1Btn"></button>
+              <button data-action="move2" id="move2Btn"></button>
+              <button data-action="capture" id="captureBtn">キャプチャボール</button>
+              <button data-action="run" id="runBtn">にげる</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide">
+        <h2>操作</h2>
+        <ul>
+          <li>移動: 矢印キー / WASD</li>
+          <li>草むらでランダムエンカウント</li>
+          <li>捕獲して手持ちを増やせる</li>
+          <li>手持ちが全滅したら自動回復して再開</li>
+        </ul>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
