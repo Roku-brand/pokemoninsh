@@ -65,6 +65,7 @@ canvas {
   grid-template-rows: auto 1fr auto auto;
   gap: 0.75rem;
   padding: 0.75rem;
+  overflow-y: auto;
 }
 
 .hidden {
@@ -158,5 +159,26 @@ button:disabled {
   .guide,
   .hud {
     order: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .canvas-wrap {
+    padding: 0.5rem;
+  }
+
+  .overlay {
+    inset: 0.5rem;
+    grid-template-rows: auto auto auto auto;
+    align-content: start;
+    max-height: calc(100% - 1rem);
+  }
+
+  .battle-scene {
+    min-height: 120px;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr;
   }
 }
